@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Developer Portfolio with GitHub Analytics
+
+A modern developer portfolio built with Next.js and Tailwind CSS, designed to showcase personal projects, skills, and live GitHub statistics in a polished single-page experience.
+
+## Overview
+
+This portfolio includes:
+
+- a hero section introducing the developer
+- an about section with key skills and experience
+- a projects showcase for featured work
+- GitHub analytics using the public GitHub API
+- repository activity and language insights
+- responsive dark-theme UI for modern portfolio presentation
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Chart.js / react-chartjs-2
+- GitHub REST API
+- Lucide React
+
+## Features
+
+- Live GitHub profile data
+- Public repository stats
+- Language usage overview
+- Recent repository activity
+- Responsive portfolio layout
+- Clean dark UI optimized for developer branding
+
+## Project Structure
+
+```bash
+.
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── GithubAnalytics.tsx
+│   ├── GithubCharts.tsx
+│   ├── Hero.tsx
+│   ├── Navbar.tsx
+│   ├── Projects.tsx
+│   └── Skills.tsx
+├── services/
+│   └── github.ts
+├── types/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+├── postcss.config.mjs
+├── eslint.config.mjs
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open your browser at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+This project supports a custom GitHub username via environment variable:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+NEXT_PUBLIC_GITHUB_USERNAME=your-github-username
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If not set, it defaults to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+vishalprakash03
+```
 
-## Deploy on Vercel
+## Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To create a production build:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+To start the production server:
+
+```bash
+npm run start
+```
+
+## Notes
+
+The GitHub data is fetched from the public GitHub API and cached for a short period to keep the portfolio fast while still reflecting recent activity.
+
+## License
+
+This project is for personal portfolio and learning purposes.
